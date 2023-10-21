@@ -11,6 +11,5 @@ public class On_Start_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.on_start_activity);
 
-
     }
 }

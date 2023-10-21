@@ -16,18 +16,49 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="center"/>
-    <TextView
-            android:text="Мои поздравления!!!"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            app:layout_constraintBottom_toBottomOf="@+id/fon"
-            app:layout_constraintTop_toTopOf="@+id/fon"
-            app:layout_constraintEnd_toEndOf="@+id/fon"
-            app:layout_constraintStart_toStartOf="@+id/fon"
-            android:textSize="24sp"
-            android:textColor="@color/black"
-    />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:padding="35dp"
+            android:id="@+id/linerlayout" android:layout_marginTop="30dp">
+
+
+        <ImageView
+                android:id="@+id/image_gray1"
+
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/grey"
+        />
+
+        <ImageView
+                android:id="@+id/image_gray2"
+                android:layout_marginStart="20dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/grey"
+        />
+        <ImageView
+                android:id="@+id/image_gray3"
+                android:layout_marginStart="20dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/grey"
+        />
+        <ImageView
+                android:id="@+id/image_gray4"
+                android:layout_marginStart="20dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/grey"
+        />
+
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

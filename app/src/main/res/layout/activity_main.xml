@@ -21,19 +21,30 @@
 
 
     <Button
-            android:text="@string/start"
-            android:textSize="35sp"
 
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:id="@+id/key_start"
             android:onClick="OnClick"
-            app:layout_constraintEnd_toEndOf="@+id/fon"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
+            android:background="@drawable/whirlpool_start"
+
+
+
             app:layout_constraintBottom_toBottomOf="@+id/fon"
-            android:backgroundTint="#0FFFFFFF"
-            android:elegantTextHeight="false"
-            android:textColor="@color/fiolet"/>
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="81dp"
+            app:layout_constraintEnd_toEndOf="@+id/fon"
+            app:layout_constraintStart_toStartOf="@+id/fon"
+            android:layout_marginStart="80dp"
+            tools:ignore="MissingConstraints"
+    />
+    <ImageView
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            app:srcCompat="@drawable/greetings"
+            android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/fon" android:layout_marginEnd="60dp"
+            app:layout_constraintEnd_toEndOf="@+id/fon" app:layout_constraintStart_toStartOf="@+id/fon"
+            android:layout_marginStart="60dp"/>
 
 </android.support.constraint.ConstraintLayout>
