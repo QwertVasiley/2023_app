@@ -17,44 +17,48 @@
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="center"/>
     <LinearLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            app:layout_constraintStart_toStartOf="parent"
-
-            android:padding="35dp"
-            android:id="@+id/linerlayout" android:layout_marginTop="30dp">
+            android:gravity="start"
+            android:padding="20pt"
+            tools:ignore="MissingConstraints">
 
 
         <ImageView
+                android:layout_weight="1"
                 android:id="@+id/image_gray1"
 
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_marginHorizontal="2pt"
+
+                android:layout_width="35pt"
+                android:layout_height="35pt"
                 app:srcCompat="@drawable/grey"
         />
 
         <ImageView
+                android:layout_weight="1"
                 android:id="@+id/image_gray2"
-                android:layout_marginStart="20dp"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
                 android:src="@drawable/grey"
         />
         <ImageView
+                android:layout_weight="1"
                 android:id="@+id/image_gray3"
-                android:layout_marginStart="20dp"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
                 android:src="@drawable/grey"
         />
         <ImageView
+                android:layout_weight="1"
                 android:id="@+id/image_gray4"
-                android:layout_marginStart="20dp"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
                 android:src="@drawable/grey"
         />
 

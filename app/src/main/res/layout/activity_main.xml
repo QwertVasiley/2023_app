@@ -19,24 +19,22 @@
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="center"/>
 
-
-    <Button
-
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:id="@+id/key_start"
-            android:onClick="OnClick"
-            android:background="@drawable/whirlpool_start"
+<Button
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:id="@+id/key_start"
+    android:onClick="OnClick"
+    android:background="@drawable/whirlpool_start"
 
 
 
-            app:layout_constraintBottom_toBottomOf="@+id/fon"
-            android:layout_marginBottom="50dp"
-            android:layout_marginEnd="81dp"
-            app:layout_constraintEnd_toEndOf="@+id/fon"
-            app:layout_constraintStart_toStartOf="@+id/fon"
-            android:layout_marginStart="80dp"
-            tools:ignore="MissingConstraints"
+    app:layout_constraintBottom_toBottomOf="@+id/fon"
+    android:layout_marginBottom="50dp"
+    android:layout_marginEnd="81dp"
+    app:layout_constraintEnd_toEndOf="@+id/fon"
+    app:layout_constraintStart_toStartOf="@+id/fon"
+    android:layout_marginStart="80dp"
+    tools:ignore="MissingConstraints"
     />
     <ImageView
             android:layout_width="320dp"
@@ -46,5 +44,6 @@
             app:layout_constraintTop_toTopOf="@+id/fon" android:layout_marginEnd="60dp"
             app:layout_constraintEnd_toEndOf="@+id/fon" app:layout_constraintStart_toStartOf="@+id/fon"
             android:layout_marginStart="60dp"/>
+
 
 </android.support.constraint.ConstraintLayout>
