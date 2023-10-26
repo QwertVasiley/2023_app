@@ -26,41 +26,43 @@
             tools:ignore="MissingConstraints">
 
 
-        <ImageView
+        <Button
                 android:layout_weight="1"
                 android:id="@+id/image_gray1"
-
                 android:layout_marginHorizontal="2pt"
-
                 android:layout_width="35pt"
                 android:layout_height="35pt"
                 app:srcCompat="@drawable/grey"
-        />
+                android:background="@drawable/grey"
+                android:textSize="50dp"/>
 
-        <ImageView
+        <Button
                 android:layout_weight="1"
                 android:id="@+id/image_gray2"
                 android:layout_marginHorizontal="2pt"
                 android:layout_width="35pt"
                 android:layout_height="35pt"
                 android:src="@drawable/grey"
-        />
-        <ImageView
+                android:background="@drawable/grey"
+                android:textSize="50dp"/>
+        <Button
                 android:layout_weight="1"
                 android:id="@+id/image_gray3"
                 android:layout_marginHorizontal="2pt"
                 android:layout_width="35pt"
                 android:layout_height="35pt"
                 android:src="@drawable/grey"
-        />
-        <ImageView
+                android:background="@drawable/grey"
+                android:textSize="50dp"/>
+        <Button
                 android:layout_weight="1"
                 android:id="@+id/image_gray4"
                 android:layout_marginHorizontal="2pt"
                 android:layout_width="35pt"
                 android:layout_height="35pt"
                 android:src="@drawable/grey"
-        />
+                android:background="@drawable/grey"
+                android:textSize="50dp"/>
 
     </LinearLayout>
 
@@ -78,7 +80,7 @@
 
 
         <Button
-                android:text="1"
+                android:text="@string/txt_key_1"
                 android:textSize="40dp"
                 android:textColor="@color/black"
                 android:layout_width="30dp"
@@ -89,10 +91,11 @@
                 android:id="@+id/key_1"
                 android:scaleType="fitXY"
                 android:contentDescription="TODO"
-                android:background="@drawable/blue"/>
+                android:background="@drawable/blue"
+                android:onClick="clickNumber1"/>
 
         <Button
-                android:text="2"
+                android:text="@string/txt_key_2"
                 android:textSize="40dp"
                 android:layout_width="30dp"
                 android:layout_height="25pt"
@@ -102,7 +105,8 @@
                 android:id="@+id/key_2"
                 android:scaleType="fitXY"
                 android:contentDescription="TODO"
-                android:background="@drawable/blue"/>
+                android:background="@drawable/blue"
+                android:onClick="clickNumber2"/>
         <Button
                 android:text="3"
                 android:textSize="40dp"
@@ -114,7 +118,8 @@
                 android:id="@+id/key_3"
                 android:scaleType="fitXY"
                 android:contentDescription="TODO"
-                android:background="@drawable/blue"/>
+                android:background="@drawable/blue"
+                android:onClick="clickNumber3"/>
         <Button
                 android:text="4"
                 android:textSize="40dp"
@@ -126,7 +131,8 @@
                 android:id="@+id/key_4"
                 android:scaleType="fitXY"
                 android:contentDescription="TODO"
-                android:background="@drawable/blue"/>
+                android:background="@drawable/blue"
+                android:onClick="clickNumber4"/>
 
 
         <Button
