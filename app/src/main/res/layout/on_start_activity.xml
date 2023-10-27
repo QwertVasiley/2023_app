@@ -17,14 +17,13 @@
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="center"/>
     <LinearLayout
-
+            android:id="@+id/buttonLinerLayoutGray1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="horizontal"
             android:gravity="start"
             android:padding="20pt"
             tools:ignore="MissingConstraints">
-
 
         <Button
                 android:layout_weight="1"
@@ -34,7 +33,8 @@
                 android:layout_height="35pt"
                 app:srcCompat="@drawable/grey"
                 android:background="@drawable/grey"
-                android:textSize="50dp"/>
+                android:textSize="50dp"
+                android:visibility="invisible"/>
 
         <Button
                 android:layout_weight="1"
@@ -44,7 +44,8 @@
                 android:layout_height="35pt"
                 android:src="@drawable/grey"
                 android:background="@drawable/grey"
-                android:textSize="50dp"/>
+                android:textSize="50dp"
+                android:visibility="invisible"/>
         <Button
                 android:layout_weight="1"
                 android:id="@+id/image_gray3"
@@ -53,7 +54,8 @@
                 android:layout_height="35pt"
                 android:src="@drawable/grey"
                 android:background="@drawable/grey"
-                android:textSize="50dp"/>
+                android:textSize="50dp"
+                android:visibility="invisible"/>
         <Button
                 android:layout_weight="1"
                 android:id="@+id/image_gray4"
@@ -62,9 +64,173 @@
                 android:layout_height="35pt"
                 android:src="@drawable/grey"
                 android:background="@drawable/grey"
-                android:textSize="50dp"/>
+                android:textSize="50dp"
+                android:visibility="invisible"/>
 
     </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/buttonLinerLayoutGray2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:padding="20pt"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="40pt">
+
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray21"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                app:srcCompat="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray22"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray23"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray24"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/buttonLinerLayoutGray3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:padding="20pt"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="80pt">
+
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray31"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                app:srcCompat="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray32"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray33"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray34"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/buttonLinerLayoutGray4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:padding="20pt"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="120pt">
+
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray41"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                app:srcCompat="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray42"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray43"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+        <Button
+                android:layout_weight="1"
+                android:id="@+id/image_gray44"
+                android:layout_marginHorizontal="2pt"
+                android:layout_width="35pt"
+                android:layout_height="35pt"
+                android:src="@drawable/grey"
+                android:background="@drawable/grey"
+                android:textSize="50dp"
+                android:visibility="invisible"/>
+
+    </LinearLayout>
+
 
 
     <LinearLayout
@@ -224,7 +390,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal"
             android:gravity="bottom"
-            android:paddingBottom="80pt"
+            android:paddingBottom="70pt"
             android:paddingHorizontal="8pt"
             tools:ignore="MissingConstraints">
 
