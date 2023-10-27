@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-
 public class On_Start_MainActivity extends AppCompatActivity {
 
     Button buttonGrey1;
@@ -22,6 +21,9 @@ public class On_Start_MainActivity extends AppCompatActivity {
     Button button8;
     Button button9;
     Button button0;
+    Button undo;
+
+    Button enter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class On_Start_MainActivity extends AppCompatActivity {
         button8 = (Button) findViewById(R.id.key_8);
         button9 = (Button) findViewById(R.id.key_9);
         button0 = (Button) findViewById(R.id.key_0);
+        undo = (Button) findViewById(R.id.undo);
+        enter = (Button) findViewById(R.id.enter);
 
     }
 
@@ -64,30 +68,37 @@ public class On_Start_MainActivity extends AppCompatActivity {
         String a = "4";
         numButton(a);
     }
+
     public void clickNumber5(View view) {
         String a = "5";
         numButton(a);
     }
+
     public void clickNumber6(View view) {
         String a = "6";
         numButton(a);
     }
+
     public void clickNumber7(View view) {
         String a = "7";
         numButton(a);
     }
+
     public void clickNumber8(View view) {
         String a = "8";
         numButton(a);
     }
+
     public void clickNumber9(View view) {
         String a = "9";
         numButton(a);
     }
+
     public void clickNumber0(View view) {
         String a = "0";
         numButton(a);
     }
+
     void numButton(String a) {
         String num;
         num = buttonGrey1.getText().toString();
@@ -109,5 +120,11 @@ public class On_Start_MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+    public void clickUndo (View view){
+        System.out.println("Нажал на кнопку ОТМЕНА");
+    }
+    public void clickEnter (View view){
+        System.out.println("НАЖАЛ КНОПКУ ENTER");
     }
 }

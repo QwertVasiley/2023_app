@@ -67,8 +67,6 @@
     </LinearLayout>
 
 
-
-
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -218,7 +216,42 @@
                 android:contentDescription="TODO"
                 android:background="@drawable/blue"
                 android:onClick="clickNumber0"/>
+
     </LinearLayout>
 
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:paddingBottom="80pt"
+            android:paddingHorizontal="8pt"
+            tools:ignore="MissingConstraints">
+
+        <Button
+                android:text="@string/undo"
+                android:textSize="40dp"
+                android:layout_width="10dp"
+                android:layout_height="25pt"
+                android:id="@+id/undo"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:layout_margin="5pt"
+                android:background="@drawable/readlong"
+                android:onClick="clickUndo"/>
+        <Button
+                android:text="@string/enter"
+                android:textSize="40dp"
+                android:layout_width="10dp"
+                android:layout_height="25pt"
+                android:id="@+id/enter"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:layout_margin="5pt"
+                android:background="@drawable/readlong"
+                android:visibility="visible"
+                android:onClick = "clickEnter"/>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
