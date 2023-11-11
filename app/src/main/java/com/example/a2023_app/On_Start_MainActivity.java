@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.lang.reflect.Array;
+
 
 public class On_Start_MainActivity extends AppCompatActivity {
     Button buttonGrey1;
@@ -42,6 +44,7 @@ public class On_Start_MainActivity extends AppCompatActivity {
     Button undo;
     Button enter;
     int numButtonLine = 0;
+
     String compNum;
     char[] arrCharNumComp = new char[4];
     char[] arrCharNumUser = new char[4];
@@ -49,8 +52,12 @@ public class On_Start_MainActivity extends AppCompatActivity {
     char[] arrGreenNum = new char[4];
     char[] arrYeloNum = new char[4];
 
+    Button[] btn = new Button[16];
+
     private int currentViewIndex = 0;
     private Handler handler = new Handler();
+
+    Button[] thisButtonLine;
 
     LinearLayout buttonLinerLayoutGray1;
     LinearLayout buttonLinerLayoutGray2;
@@ -65,7 +72,7 @@ public class On_Start_MainActivity extends AppCompatActivity {
 
         compNum = GameLogic.rand();
         arrCharNumComp = compNum.toCharArray();
-        numButtonLine++;
+
         System.out.println("Линия кнопок ввода чисел" + numButtonLine);
         System.out.println("Число задуманное компьютером " + compNum);
 
@@ -102,7 +109,7 @@ public class On_Start_MainActivity extends AppCompatActivity {
         undo = (Button) findViewById(R.id.undo);
         enter = (Button) findViewById(R.id.enter);
 
-        Button[] btn = new Button[16];
+
         btn[0] = buttonGrey1;
         btn[1] = buttonGrey2;
         btn[2] = buttonGrey3;
@@ -143,89 +150,89 @@ public class On_Start_MainActivity extends AppCompatActivity {
         String a = "1";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber2(View view) {
         String a = "2";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber3(View view) {
         String a = "3";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber4(View view) {
         String a = "4";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber5(View view) {
         String a = "5";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber6(View view) {
         String a = "6";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber7(View view) {
         String a = "7";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber8(View view) {
         String a = "8";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber9(View view) {
         String a = "9";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickNumber0(View view) {
         String a = "0";
         numButton(a);
         schelk();
-        vibration ();
+        vibration();
     }
 
     void numButton(String a) {
         String num;
-        num = buttonGrey1.getText().toString();
+        num = btn[numButtonLine].getText().toString();
         if (num.equals("")) {
-            buttonGrey1.setText(a);
+            btn[numButtonLine].setText(a);
         } else {
-            num = buttonGrey2.getText().toString();
+            num = btn[numButtonLine+1].getText().toString();
             if (num.equals("")) {
-                buttonGrey2.setText(a);
+                btn[numButtonLine+1].setText(a);
             } else {
-                num = buttonGrey3.getText().toString();
+                num = btn[numButtonLine+2].getText().toString();
                 if (num.equals("")) {
-                    buttonGrey3.setText(a);
+                    btn[numButtonLine+2].setText(a);
                 } else {
-                    num = buttonGrey4.getText().toString();
+                    num = btn[numButtonLine+3].getText().toString();
                     if (num.equals("")) {
-                        buttonGrey4.setText(a);
+                        btn[numButtonLine+3].setText(a);
                     }
                 }
             }
@@ -236,88 +243,90 @@ public class On_Start_MainActivity extends AppCompatActivity {
         String a = "";
         undoKey();
         schelk();
-        vibration ();
+        vibration();
     }
 
     public void clickEnter(View view) {
-        if (buttonGrey4.getText().toString() != "") {
 
-            arrCharNumUser[0] = buttonGrey1.getText().toString().charAt(0);
-            arrCharNumUser[1] = buttonGrey2.getText().toString().charAt(0);
-            arrCharNumUser[2] = buttonGrey3.getText().toString().charAt(0);
-            arrCharNumUser[3] = buttonGrey4.getText().toString().charAt(0);
+
+        if (btn[numButtonLine+3].getText().toString() != "") {
+
+            arrCharNumUser[0] = btn[numButtonLine].getText().toString().charAt(0);
+            arrCharNumUser[1] = btn[numButtonLine+1].getText().toString().charAt(0);
+            arrCharNumUser[2] = btn[numButtonLine+2].getText().toString().charAt(0);
+            arrCharNumUser[3] = btn[numButtonLine+3].getText().toString().charAt(0);
             System.out.println(arrCharNumUser);
             arrGreenNum = GameLogic.tru(arrCharNumComp, arrCharNumUser); //проверка на полное совпадение
 
             if (arrGreenNum[0] == 1)
-                buttonGrey1.setBackgroundResource(R.drawable.green);
+                btn[numButtonLine].setBackgroundResource(R.drawable.green);
             if (arrGreenNum[1] == 1)
-                buttonGrey2.setBackgroundResource(R.drawable.green);
+                btn[numButtonLine+1].setBackgroundResource(R.drawable.green);
             if (arrGreenNum[2] == 1)
-                buttonGrey3.setBackgroundResource(R.drawable.green);
+                btn[numButtonLine+2].setBackgroundResource(R.drawable.green);
             if (arrGreenNum[3] == 1)
-                buttonGrey4.setBackgroundResource(R.drawable.green);
+                btn[numButtonLine+3].setBackgroundResource(R.drawable.green);
 
             arrYeloNum = GameLogic.yeloTru(arrCharNumComp, arrCharNumUser); //проверка на желтые
             if (arrYeloNum[0] == 1)
-                buttonGrey1.setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine].setBackgroundResource(R.drawable.yellow);
             if (arrYeloNum[1] == 1)
-                buttonGrey2.setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine+1].setBackgroundResource(R.drawable.yellow);
             if (arrYeloNum[2] == 1)
-                buttonGrey3.setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine+2].setBackgroundResource(R.drawable.yellow);
             if (arrYeloNum[3] == 1)
-                buttonGrey4.setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine+3].setBackgroundResource(R.drawable.yellow);
 
             schelk();
-            vibration ();
-            newLineGrayButton(arrCharNumUser, view);
+            vibration();
+            newLineGrayButton();
         }
     }
 
     void undoKey() {
         String num;
-        num = buttonGrey4.getText().toString();
+        num = btn[numButtonLine+3].getText().toString();
         if (num != "") {
-            buttonGrey4.setText("");
+            btn[numButtonLine+3].setText("");
         } else {
-            num = buttonGrey3.getText().toString();
+            num = btn[numButtonLine+2].getText().toString();
             if (num != "") {
-                buttonGrey3.setText("");
+                btn[numButtonLine+2].setText("");
             } else {
-                num = buttonGrey2.getText().toString();
+                num = btn[numButtonLine+1].getText().toString();
                 if (num != "") {
-                    buttonGrey2.setText("");
+                    btn[numButtonLine+1].setText("");
                 } else {
-                    num = buttonGrey1.getText().toString();
+                    num = btn[numButtonLine].getText().toString();
                     if (num != "") {
-                        buttonGrey1.setText("");
+                        btn[numButtonLine].setText("");
                     }
                 }
             }
         }
     }
 
-    private void newLineGrayButton(char[] buttons, View view) {
-        buttonLinerLayoutGray2 = (LinearLayout) findViewById(R.id.buttonLinerLayoutGray2);
-        arrCharNumUser = new char[4];
+    private void newLineGrayButton() {
+        numButtonLine = numButtonLine + 4;
 
-//        arrCharNumUser[0] = buttonGrey21.getText().toString().charAt(0);
-//        arrCharNumUser[1] = buttonGrey22.getText().toString().charAt(0);
-//        arrCharNumUser[2] = buttonGrey21.getText().toString().charAt(0);
-//        arrCharNumUser[3] = buttonGrey22.getText().toString().charAt(0);
+        // сравнить numButtonLine с максимальным числом
+        // и если все true, то вызвать поздравление с победой
+        // если все не тру, то поздравить с проигрышем -)
 
-//        buttonGrey21.setVisibility(View.VISIBLE);
-//        buttonGrey22.setVisibility(View.VISIBLE);
-//        buttonGrey23.setVisibility(View.VISIBLE);
-//        buttonGrey24.setVisibility(View.VISIBLE);
+//        for (int i = 0; i < 4; i++) {
+//            btn[numButtonLine + i].setBackgroundResource(R.drawable.blue);
+//        }
     }
-    public void schelk (){
+
+
+    public void schelk() {
         MediaPlayer.create(this, R.raw.schelk).start();
     }
-    public void vibration (){
+
+    public void vibration() {
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O) {
-            vibrator.vibrate(VibrationEffect.createOneShot(50,VibrationEffect.DEFAULT_AMPLITUDE));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
         } else {
             vibrator.vibrate(50);
         }
