@@ -46,6 +46,8 @@ public class On_Start_MainActivity extends AppCompatActivity {
     int numButtonLine = 0;
 
     String compNum;
+
+    String userNum;
     char[] arrCharNumComp = new char[4];
     char[] arrCharNumUser = new char[4];
 
@@ -222,17 +224,17 @@ public class On_Start_MainActivity extends AppCompatActivity {
         if (num.equals("")) {
             btn[numButtonLine].setText(a);
         } else {
-            num = btn[numButtonLine+1].getText().toString();
+            num = btn[numButtonLine + 1].getText().toString();
             if (num.equals("")) {
-                btn[numButtonLine+1].setText(a);
+                btn[numButtonLine + 1].setText(a);
             } else {
-                num = btn[numButtonLine+2].getText().toString();
+                num = btn[numButtonLine + 2].getText().toString();
                 if (num.equals("")) {
-                    btn[numButtonLine+2].setText(a);
+                    btn[numButtonLine + 2].setText(a);
                 } else {
-                    num = btn[numButtonLine+3].getText().toString();
+                    num = btn[numButtonLine + 3].getText().toString();
                     if (num.equals("")) {
-                        btn[numButtonLine+3].setText(a);
+                        btn[numButtonLine + 3].setText(a);
                     }
                 }
             }
@@ -249,33 +251,35 @@ public class On_Start_MainActivity extends AppCompatActivity {
     public void clickEnter(View view) {
 
 
-        if (btn[numButtonLine+3].getText().toString() != "") {
+        if (btn[numButtonLine + 3].getText().toString() != "") {
 
             arrCharNumUser[0] = btn[numButtonLine].getText().toString().charAt(0);
-            arrCharNumUser[1] = btn[numButtonLine+1].getText().toString().charAt(0);
-            arrCharNumUser[2] = btn[numButtonLine+2].getText().toString().charAt(0);
-            arrCharNumUser[3] = btn[numButtonLine+3].getText().toString().charAt(0);
-            System.out.println(arrCharNumUser);
+            arrCharNumUser[1] = btn[numButtonLine + 1].getText().toString().charAt(0);
+            arrCharNumUser[2] = btn[numButtonLine + 2].getText().toString().charAt(0);
+            arrCharNumUser[3] = btn[numButtonLine + 3].getText().toString().charAt(0);
+            userNum = new String(arrCharNumUser);
+            System.out.println("Число юзверя"+userNum);
+           // System.out.println(arrCharNumUser);
             arrGreenNum = GameLogic.tru(arrCharNumComp, arrCharNumUser); //проверка на полное совпадение
 
             if (arrGreenNum[0] == 1)
                 btn[numButtonLine].setBackgroundResource(R.drawable.green);
             if (arrGreenNum[1] == 1)
-                btn[numButtonLine+1].setBackgroundResource(R.drawable.green);
+                btn[numButtonLine + 1].setBackgroundResource(R.drawable.green);
             if (arrGreenNum[2] == 1)
-                btn[numButtonLine+2].setBackgroundResource(R.drawable.green);
+                btn[numButtonLine + 2].setBackgroundResource(R.drawable.green);
             if (arrGreenNum[3] == 1)
-                btn[numButtonLine+3].setBackgroundResource(R.drawable.green);
+                btn[numButtonLine + 3].setBackgroundResource(R.drawable.green);
 
             arrYeloNum = GameLogic.yeloTru(arrCharNumComp, arrCharNumUser); //проверка на желтые
             if (arrYeloNum[0] == 1)
                 btn[numButtonLine].setBackgroundResource(R.drawable.yellow);
             if (arrYeloNum[1] == 1)
-                btn[numButtonLine+1].setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine + 1].setBackgroundResource(R.drawable.yellow);
             if (arrYeloNum[2] == 1)
-                btn[numButtonLine+2].setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine + 2].setBackgroundResource(R.drawable.yellow);
             if (arrYeloNum[3] == 1)
-                btn[numButtonLine+3].setBackgroundResource(R.drawable.yellow);
+                btn[numButtonLine + 3].setBackgroundResource(R.drawable.yellow);
 
             schelk();
             vibration();
@@ -285,17 +289,17 @@ public class On_Start_MainActivity extends AppCompatActivity {
 
     void undoKey() {
         String num;
-        num = btn[numButtonLine+3].getText().toString();
+        num = btn[numButtonLine + 3].getText().toString();
         if (num != "") {
-            btn[numButtonLine+3].setText("");
+            btn[numButtonLine + 3].setText("");
         } else {
-            num = btn[numButtonLine+2].getText().toString();
+            num = btn[numButtonLine + 2].getText().toString();
             if (num != "") {
-                btn[numButtonLine+2].setText("");
+                btn[numButtonLine + 2].setText("");
             } else {
-                num = btn[numButtonLine+1].getText().toString();
+                num = btn[numButtonLine + 1].getText().toString();
                 if (num != "") {
-                    btn[numButtonLine+1].setText("");
+                    btn[numButtonLine + 1].setText("");
                 } else {
                     num = btn[numButtonLine].getText().toString();
                     if (num != "") {
@@ -308,7 +312,15 @@ public class On_Start_MainActivity extends AppCompatActivity {
 
     private void newLineGrayButton() {
         numButtonLine = numButtonLine + 4;
+        System.out.println(numButtonLine);
 
+        if (userNum.equals(compNum)){
+            congratulation();
+        } else {
+           if (numButtonLine == 16) {
+               loss();
+            }
+        }
         // сравнить numButtonLine с максимальным числом
         // и если все true, то вызвать поздравление с победой
         // если все не тру, то поздравить с проигрышем -)
@@ -318,6 +330,13 @@ public class On_Start_MainActivity extends AppCompatActivity {
 //        }
     }
 
+    public void congratulation() {
+        System.out.println("YOU WIN!!!");
+    }
+
+    public void loss (){
+        System.out.println("YOU LOSS!!! :-(");
+    }
 
     public void schelk() {
         MediaPlayer.create(this, R.raw.schelk).start();
