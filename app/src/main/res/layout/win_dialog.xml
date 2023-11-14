@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/dialogfon"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:background="@drawable/creativity"
+        android:layout_margin="5dp"
+>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            android:gravity="bottom"
+
+
+            android:id="@+id/linearLayout">
+
+
+        <Button
+
+                android:id="@+id/again"
+                android:background="@drawable/purpl"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="AGAIN"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+
+        />
+        <Button
+                android:id="@+id/exit"
+                android:background="@drawable/purpl"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="EXIT"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+
+                android:stateListAnimator="@android:anim/cycle_interpolator"/>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.4"
+            android:id="@+id/smilepict"
+            android:src="@drawable/happy"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="YOU WIN"
+              android:textSize="40sp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:layout_marginTop="2dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+
+              style="?android:absListViewStyle"
+
+              android:textIsSelectable="false"/>
+
+
+</android.support.constraint.ConstraintLayout>
+

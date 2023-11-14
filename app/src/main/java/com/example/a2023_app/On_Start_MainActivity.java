@@ -1,10 +1,15 @@
 package com.example.a2023_app;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.*;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -43,6 +48,8 @@ public class On_Start_MainActivity extends AppCompatActivity {
     Button button0;
     Button undo;
     Button enter;
+
+    Dialog dialog;
     int numButtonLine = 0;
 
     String compNum;
@@ -66,6 +73,7 @@ public class On_Start_MainActivity extends AppCompatActivity {
     LinearLayout buttonLinerLayoutGray3;
     LinearLayout buttonLinerLayoutGray4;
     int wrapContent = LinearLayout.LayoutParams.WRAP_CONTENT;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,7 +141,7 @@ public class On_Start_MainActivity extends AppCompatActivity {
 
     }
 
-    private void showViewsSequentialli(Button[] buttons) {
+    private void showViewsSequentialli(Button[] buttons) {  // поочередное появление кнопок
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -251,40 +259,46 @@ public class On_Start_MainActivity extends AppCompatActivity {
     public void clickEnter(View view) {
 
 
-        if (btn[numButtonLine + 3].getText().toString() != "") {
 
-            arrCharNumUser[0] = btn[numButtonLine].getText().toString().charAt(0);
-            arrCharNumUser[1] = btn[numButtonLine + 1].getText().toString().charAt(0);
-            arrCharNumUser[2] = btn[numButtonLine + 2].getText().toString().charAt(0);
-            arrCharNumUser[3] = btn[numButtonLine + 3].getText().toString().charAt(0);
-            userNum = new String(arrCharNumUser);
-            System.out.println("Число юзверя"+userNum);
-           // System.out.println(arrCharNumUser);
-            arrGreenNum = GameLogic.tru(arrCharNumComp, arrCharNumUser); //проверка на полное совпадение
 
-            if (arrGreenNum[0] == 1)
-                btn[numButtonLine].setBackgroundResource(R.drawable.green);
-            if (arrGreenNum[1] == 1)
-                btn[numButtonLine + 1].setBackgroundResource(R.drawable.green);
-            if (arrGreenNum[2] == 1)
-                btn[numButtonLine + 2].setBackgroundResource(R.drawable.green);
-            if (arrGreenNum[3] == 1)
-                btn[numButtonLine + 3].setBackgroundResource(R.drawable.green);
+            if (btn[numButtonLine + 3].getText().toString() != "") {
 
-            arrYeloNum = GameLogic.yeloTru(arrCharNumComp, arrCharNumUser); //проверка на желтые
-            if (arrYeloNum[0] == 1)
-                btn[numButtonLine].setBackgroundResource(R.drawable.yellow);
-            if (arrYeloNum[1] == 1)
-                btn[numButtonLine + 1].setBackgroundResource(R.drawable.yellow);
-            if (arrYeloNum[2] == 1)
-                btn[numButtonLine + 2].setBackgroundResource(R.drawable.yellow);
-            if (arrYeloNum[3] == 1)
-                btn[numButtonLine + 3].setBackgroundResource(R.drawable.yellow);
+                arrCharNumUser[0] = btn[numButtonLine].getText().toString().charAt(0);
+                arrCharNumUser[1] = btn[numButtonLine + 1].getText().toString().charAt(0);
+                arrCharNumUser[2] = btn[numButtonLine + 2].getText().toString().charAt(0);
+                arrCharNumUser[3] = btn[numButtonLine + 3].getText().toString().charAt(0);
+                userNum = new String(arrCharNumUser);
+                System.out.println("Число юзверя" + userNum);
+                // System.out.println(arrCharNumUser);
+                arrGreenNum = GameLogic.tru(arrCharNumComp, arrCharNumUser); //проверка на полное совпадение
 
-            schelk();
-            vibration();
-            newLineGrayButton();
-        }
+                if (arrGreenNum[0] == 1)
+                    btn[numButtonLine].setBackgroundResource(R.drawable.green);
+                if (arrGreenNum[1] == 1)
+                    btn[numButtonLine + 1].setBackgroundResource(R.drawable.green);
+                if (arrGreenNum[2] == 1)
+                    btn[numButtonLine + 2].setBackgroundResource(R.drawable.green);
+                if (arrGreenNum[3] == 1)
+                    btn[numButtonLine + 3].setBackgroundResource(R.drawable.green);
+
+                arrYeloNum = GameLogic.yeloTru(arrCharNumComp, arrCharNumUser); //проверка на желтые
+                if (arrYeloNum[0] == 1)
+                    btn[numButtonLine].setBackgroundResource(R.drawable.yellow);
+                if (arrYeloNum[1] == 1)
+                    btn[numButtonLine + 1].setBackgroundResource(R.drawable.yellow);
+                if (arrYeloNum[2] == 1)
+                    btn[numButtonLine + 2].setBackgroundResource(R.drawable.yellow);
+                if (arrYeloNum[3] == 1)
+                    btn[numButtonLine + 3].setBackgroundResource(R.drawable.yellow);
+
+                schelk();
+                vibration();
+                newLineGrayButton();
+                if (userNum.equals(compNum)){
+                    congratulation();
+                }
+            }
+
     }
 
     void undoKey() {
@@ -321,6 +335,8 @@ public class On_Start_MainActivity extends AppCompatActivity {
                loss();
             }
         }
+
+
         // сравнить numButtonLine с максимальным числом
         // и если все true, то вызвать поздравление с победой
         // если все не тру, то поздравить с проигрышем -)
@@ -332,10 +348,24 @@ public class On_Start_MainActivity extends AppCompatActivity {
 
     public void congratulation() {
         System.out.println("YOU WIN!!!");
+        //Вызов диалогового окна
+        dialog = new Dialog(this);
+        //создаем новое диалоговое окно
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); //скрываем название окна (заголовок)
+        dialog.setContentView(R.layout.win_dialog); //путь к макету диалогового окна
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));  //прозрачный фон диалогового окна
+        dialog.setCancelable(false);  //отключаем возможность закрытия окна кнопкой НАЗАД
+        dialog.show(); //отображение диалогового окна
+
     }
 
     public void loss (){
         System.out.println("YOU LOSS!!! :-(");
+        FragmentManager manager = getSupportFragmentManager();
+        MyDialogFragment myDialogFragment = new MyDialogFragment();
+        myDialogFragment.setTitle("ТЫ ПРОИГРАЛ");
+        myDialogFragment.setMessage("ПОПРОБУЙ ЕЩЕ РАЗ!!!");
+        myDialogFragment.show(manager, "Сдесь проигрыш");
     }
 
     public void schelk() {
@@ -350,4 +380,6 @@ public class On_Start_MainActivity extends AppCompatActivity {
             vibrator.vibrate(50);
         }
     }
+
+
 }
