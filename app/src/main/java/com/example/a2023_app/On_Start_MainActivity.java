@@ -258,9 +258,6 @@ public class On_Start_MainActivity extends AppCompatActivity {
 
     public void clickEnter(View view) {
 
-
-
-
             if (btn[numButtonLine + 3].getText().toString() != "") {
 
                 arrCharNumUser[0] = btn[numButtonLine].getText().toString().charAt(0);
@@ -335,15 +332,6 @@ public class On_Start_MainActivity extends AppCompatActivity {
                loss();
             }
         }
-
-
-        // сравнить numButtonLine с максимальным числом
-        // и если все true, то вызвать поздравление с победой
-        // если все не тру, то поздравить с проигрышем -)
-
-//        for (int i = 0; i < 4; i++) {
-//            btn[numButtonLine + i].setBackgroundResource(R.drawable.blue);
-//        }
     }
 
     public void congratulation() {
@@ -380,6 +368,4 @@ public class On_Start_MainActivity extends AppCompatActivity {
             vibrator.vibrate(50);
         }
     }
-
-
 }
